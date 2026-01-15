@@ -11,7 +11,6 @@ const app = express();
 app.use(helmet());
 app.use(express.json());
 app.use(bodyParser.json())
-//app.use("/api/weather", weatherRoutes);
 
 //handle weather API
 app.get('/', (req, res) => handleAPI(req, res))
