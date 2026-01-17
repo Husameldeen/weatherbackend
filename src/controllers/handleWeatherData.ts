@@ -12,10 +12,10 @@ const normalizeWeather = (data: any): NormalizedWeather => ({
   visibility: data.current.vis_km,
   pressure: data.current.pressure_mb,
   condition: data.current.condition.text,
-  hourlyWeather: data.forecast.forecastday[0].hour.map((h: { time: any; temp_c: any; condition: { text: any; }; }) => ({
+  hourlyWeather: data.forecast.forecastday[0].hour.map((h: { time: any; temp_c: any; condition: { icon: any; }; }) => ({
     time: h.time,
     temp_c: h.temp_c,
-    condition: h.condition.text
+    icon: h.condition.icon
   }))
 });
 
@@ -39,7 +39,7 @@ interface NormalizedWeather {
 type hourlyWeather = {
   time: string;
   temp_c: number;
-  condition: string;
+  icon: string;
 };
 
 export default normalizeWeather;

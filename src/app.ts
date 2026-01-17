@@ -1,5 +1,6 @@
 import express from "express";
 import helmet from "helmet";
+import cors from "cors";
 //import weatherRoutes from "./routes/weather.routes.js";
 import { errorHandler } from "./middlewares/error.middleware.js";
 import { notFound } from "./middlewares/notFound.middleware.js";
@@ -11,6 +12,7 @@ const app = express();
 app.use(helmet());
 app.use(express.json());
 app.use(bodyParser.json())
+app.use(cors());
 
 //handle weather API
 app.get('/', (req, res) => handleAPI(req, res))
