@@ -1,10 +1,11 @@
 import express from "express";
 import helmet from "helmet";
 import cors from "cors";
-//import weatherRoutes from "./routes/weather.routes.js";
 import { errorHandler } from "./middlewares/error.middleware.js";
 import { notFound } from "./middlewares/notFound.middleware.js";
 import handleAPI from './controllers/handleAPI.js';
+import handleSearch from './controllers/handleSearch.js';
+
 import bodyParser from "body-parser";
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(cors());
 
 //handle weather API
 app.get('/', (req, res) => handleAPI(req, res))
+app.get('/search', (req, res) => handleSearch(req, res))
 
 app.use(notFound);
 app.use(errorHandler);
