@@ -5,8 +5,16 @@ import { errorHandler } from "./middlewares/error.middleware.js";
 import { notFound } from "./middlewares/notFound.middleware.js";
 import handleAPI from './controllers/handleAPI.js';
 import handleSearch from './controllers/handleSearch.js';
-
 import bodyParser from "body-parser";
+
+process.on('unhandledRejection', (reason) => {
+  console.error('Unhandled Rejection:');
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:');
+});
+
 
 const app = express();
 
