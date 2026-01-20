@@ -27,7 +27,7 @@ const handleSearch = async (req: any, res: any) => {
             }
 
             // Anything else
-            res.status(500).json({ error: 'Internal server error' });
+            res.status(500).json('Internal server error');
         }
     }
     
