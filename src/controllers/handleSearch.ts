@@ -22,9 +22,8 @@ const handleSearch = async (req: any, res: any) => {
         } catch (err: any) {
             // Axios error (API responded with 4xx / 5xx)
             if (axios.isAxiosError(err)) {
-            return res
-                .status(err.response?.status || 502)
-                .json(err.response?.data || { error: 'Weather API error' });
+                console.log(err.response?.status || 502)
+                console.log(err.response?.data || { error: 'Weather API error' });
             }
 
             // Anything else

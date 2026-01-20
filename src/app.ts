@@ -1,14 +1,14 @@
 import express from "express";
 import helmet from "helmet";
 import cors from "cors";
-import { errorHandler } from "./middlewares/error.middleware.js";
-import { notFound } from "./middlewares/notFound.middleware.js";
+// import { errorHandler } from "./middlewares/error.middleware.js";
+// import { notFound } from "./middlewares/notFound.middleware.js";
 import handleAPI from './controllers/handleAPI.js';
 import handleSearch from './controllers/handleSearch.js';
 import bodyParser from "body-parser";
 
 process.on('unhandledRejection', (reason) => {
-  console.error('Unhandled Rejection:');
+  console.error('Unhandled Rejection:', reason);
 });
 
 process.on('uncaughtException', (err) => {
@@ -27,7 +27,7 @@ app.use(cors());
 app.get('/', (req, res) => handleAPI(req, res))
 app.get('/search', (req, res) => handleSearch(req, res))
 
-app.use(notFound);
-app.use(errorHandler);
+// app.use(notFound);
+// app.use(errorHandler);
 
 export default app;
