@@ -12,7 +12,7 @@ const handleAPI = async (req: any, res: any) => {
       `https://api.weatherapi.com/v1/forecast.json?key=${process.env.WEATHER_API_KEY}&q=${city}`,
     );
 
-    res.json(response.data);
+    res.json(normalizeWeather(response.data));
     // console.log(data);
   } catch (err) {
     res.json(err);
