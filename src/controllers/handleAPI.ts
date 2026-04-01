@@ -8,7 +8,7 @@ const handleAPI = async (req: any, res: any) => {
   const response = await axios.get(
     `https://api.weatherapi.com/v1/forecast.json?Key=${process.env.WEATHER_API_KEY}&q=${city}&days=3`,
   );
-  res.json(response.data);
+  res.json(response);
 };
 
 export default handleAPI;
