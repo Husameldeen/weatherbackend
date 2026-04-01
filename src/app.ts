@@ -24,10 +24,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //handle weather API
-app.get("/", (req, res) => {
-  res.send("Helloooooo Server is conected");
-});
-// app.get('/', (req, res) => handleAPI(req, res))
+// app.get('/', (req, res) => {res.send('Helloooooo Server is conected')});
+app.get("/", (req, res) => handleAPI(req, res));
 app.get("/search", (req, res) => handleSearch(req, res));
 app.get("/currentlocation", (req, res) => handleCurrentLocation(req, res));
 
