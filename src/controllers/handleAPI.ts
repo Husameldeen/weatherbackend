@@ -13,13 +13,9 @@ const handleAPI = async (req: any, res: any) => {
     );
 
     res.json(normalizeWeather(response.data));
-    // console.log(data);
   } catch (err) {
     res.json(err);
   }
 };
 
 export default handleAPI;
-
-//https://api.weatherapi.com/v1/forecast.json?Key=3329f26b8f8d4dc1829101914250412&q=london&days=3
-//https://api.weatherapi.com/v1/current.json?key=3329f26b8f8d4dc1829101914250412&q=London&aqi=no
