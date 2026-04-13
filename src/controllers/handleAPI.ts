@@ -4,6 +4,7 @@ import normalizeWeather from "./handleWeatherData.js";
 
 const handleAPI = async (req: any, res: any) => {
   const { city } = req.query;
+  console.log(process.env.WEATHER_API_KEY);
 
   if (!city) res.send("please enter your city!");
 

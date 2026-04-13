@@ -26,7 +26,6 @@ app.use(cors());
 //handle weather API
 app.get("/", (req, res) => {
   res.send("Helloooooo Server is conected");
-  console.log(process.env.WEATHER_API_KEY);
 });
 app.get("/city", (req, res) => handleAPI(req, res));
 app.get("/search", (req, res) => handleSearch(req, res));
